@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Button } from '../../../../shared/components/button/button';
 
-
 @Component({
   selector: 'app-header',
   imports: [Button],
@@ -9,10 +8,7 @@ import { Button } from '../../../../shared/components/button/button';
   styleUrl: './header.css'
 })
 export class Header {
-  // Controla el menú móvil
   isMenuOpen = signal(false);
-
-  // Esto luego lo reemplazarás con Angular Translate
   language = signal<'es' | 'en'>('es');
 
   navItems = signal([
@@ -32,8 +28,7 @@ export class Header {
     this.isMenuOpen.set(false);
   }
 
-  // El botón está, pero no cambia el idioma (lo implementarás después)
   toggleLanguage() {
-    console.log('Aquí luego llamarás a translate.use(...)');
+    //this.language.set(this.language() === 'es' ? 'en' : 'es');
   }
 }
