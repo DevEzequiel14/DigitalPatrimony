@@ -1,0 +1,99 @@
+<header class="relative">
+  <!-- Nav -->
+  <nav class="relative z-50 bg-background/95 backdrop-blur-sm border-b border-border/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <h1 class="text-xl font-bold text-primary">
+            Repositorio Digital Patrimonial
+          </h1>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            @for (item of navItems(); track item.id) {
+            <button (click)="scrollToSection(item.id)"
+              class="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer">
+              {{ item.labelEs }}
+            </button>
+            }
+          </div>
+        </div>
+
+        <!-- Controls (Language + Mobile Toggle) -->
+        <div class="flex items-center space-x-2">
+
+          <!-- Botón idioma (sin funcionalidad aún) -->
+          <app-button (click)="toggleLanguage()" variant="outline" size="sm"
+            className="flex items-center space-x-1 bg-transparent">
+            <!-- <span class="material-icons text-sm">language</span> -->
+            <span class="material-symbols-outlined text-sm">
+              language
+            </span>
+            <span>{{ language().toUpperCase() }}</span>
+          </app-button>
+
+          <!-- Botón menú móvil -->
+          <div class="lg:hidden">
+            <app-button variant="ghost" size="sm" (click)="isMenuOpen.set(!isMenuOpen())"
+              class="p-2 hover:bg-accent rounded h-5 w-5">
+              @if (!isMenuOpen()) {
+              <span>☰</span>
+              }
+              @else {
+              <span>✕</span>
+              }
+            </app-button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    @if (isMenuOpen()){
+    <div class="lg:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border/20">
+        @for (item of navItems(); track item.id) {
+        <button (click)="scrollToSection(item.id)"
+          class="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors">
+          {{ item.labelEs }}
+        </button>
+        }
+      </div>
+    </div>
+    }
+  </nav>
+
+  <!-- Hero -->
+  <div class="relative h-96 lg:h-[500px] overflow-hidden">
+
+    <div class="absolute inset-0">
+      <img src="/ancient-archaeological-artifacts-pottery-ceramics-.jpg" alt="Colección arqueológica"
+        class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 h-full flex items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="text-4xl lg:text-6xl font-bold text-white mb-4">
+            Preservando Nuestro Patrimonio Cultural
+          </h2>
+          <p class="text-lg lg:text-xl text-white/90 mb-8">
+            Explora una colección única de artefactos arqueológicos que narran nuestra historia ancestral.
+          </p>
+          <app-button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer"
+            (click)="scrollToSection('catalogo')">
+            Explorar Catálogo
+          </app-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
+  </div>
+</header>

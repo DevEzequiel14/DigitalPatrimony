@@ -1,0 +1,125 @@
+<section id="noticias" class="py-16 bg-secondary/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-3">
+
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-foreground mb-4">
+            {{ content[lang.language()].title }}
+          </h2>
+          <p class="text-muted-foreground text-lg">
+            {{ content[lang.language()].subtitle }}
+          </p>
+        </div>
+
+        <!-- Tabs -->
+        <!-- <div class="flex space-x-1 mb-6 bg-muted rounded-lg p-1">
+          <app-button class="flex-1" [variant]="activeTab() === 'news' ? 'default' : 'ghost'"
+            (click)="activeTab.set('news')">
+            {{ content[lang.language()].news }}
+          </app-button>
+
+          <app-button class="flex-1" [variant]="activeTab() === 'agenda' ? 'default' : 'ghost'"
+            (click)="activeTab.set('agenda')">
+            {{ content[lang.language()].agenda }}
+          </app-button>
+        </div> -->
+
+        <!-- NEWS TAB -->
+        <ng-container *ngIf="activeTab() === 'news'">
+          <ui-card class="overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+              <div class="relative h-64 md:h-auto">
+                <img [src]="currentNews().image" class="w-full h-full object-cover" />
+
+                <div class="absolute top-4 left-4">
+                  <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                    {{ currentNews().category }}
+                  </span>
+                </div>
+              </div>
+
+              <ui-card-content class="p-6 flex flex-col justify-between">
+                <div>
+                  <p class="text-sm text-muted-foreground mb-2">{{ currentNews().date }}</p>
+                  <h3 class="text-xl font-bold text-foreground mb-4 text-balance">{{ currentNews().title }}</h3>
+                  <p class="text-muted-foreground text-pretty">{{ currentNews().description }}</p>
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+                  <app-button variant="outline" size="sm">
+                    {{ content[lang.language()].readMore }}
+                  </app-button>
+
+                  <div class="flex space-x-2">
+                    <app-button variant="outline" size="sm" (click)="prevNews()">
+                      &lt;
+                    </app-button>
+
+                    <app-button variant="outline" size="sm" (click)="nextNews()">
+                      &gt;
+                    </app-button>
+                  </div>
+                </div>
+              </ui-card-content>
+            </div>
+          </ui-card>
+
+          <!-- Indicators -->
+          <div class="flex justify-center space-x-2 mt-4">
+            <button *ngFor="let n of newsItems; index as i" (click)="currentNewsIndex.set(i)"
+              [ngClass]="i === currentNewsIndex() ? 'bg-primary' : 'bg-muted-foreground/30'"
+              class="w-2 h-2 rounded-full transition-colors">
+            </button>
+          </div>
+        </ng-container>
+
+        <!-- AGENDA TAB -->
+        <!-- <ng-container *ngIf="activeTab() === 'agenda'">
+          <div class="space-y-4">
+            <ui-card *ngFor="let item of agendaItems" class="hover:shadow-md transition-shadow">
+              <ui-card-content class="p-6">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                  <div class="flex-1">
+                    <h3 class="text-lg font-semibold text-foreground mb-2">{{ item.title }}</h3>
+                    <p class="text-muted-foreground mb-3 text-pretty">{{ item.description }}</p>
+
+                    <div class="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                      <div class="flex items-center gap-1">📅 {{ item.date }}</div>
+                      <div class="flex items-center gap-1">⏱ {{ item.time }}</div>
+                      <div class="flex items-center gap-1">📍 {{ item.location }}</div>
+                    </div>
+                  </div>
+
+                  <app-button variant="outline" size="sm">
+                    {{ content[lang.language()].moreInfo }}
+                  </app-button>
+                </div>
+              </ui-card-content>
+            </ui-card>
+          </div>
+        </ng-container> -->
+
+      </div>
+
+      <!-- Video Sidebar -->
+      <div class="lg:col-span-1">
+        <ui-card class="sticky top-8">
+          <ui-card-content>
+            <h3 class="text-lg font-semibold mb-4">{{ content[lang.language()].videoTitle }}</h3>
+
+            <div class="aspect-video rounded-lg overflow-hidden mb-4">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" class="w-full h-full rounded-lg"></iframe>
+            </div>
+
+            <h4 class="font-medium mb-2">{{ content[lang.language()].videoSubtitle }}</h4>
+            <p class="text-sm text-muted-foreground">{{ content[lang.language()].videoDescription }}</p>
+          </ui-card-content>
+        </ui-card>
+      </div>
+
+
+    </div>
+  </div>
+</section>
