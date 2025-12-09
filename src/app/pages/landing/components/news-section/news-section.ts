@@ -1,5 +1,5 @@
 import { Component, signal, computed } from '@angular/core';
-import { NgFor, NgIf, NgClass } from '@angular/common';
+import { NgClass, NgFor, NgForOf } from '@angular/common';
 import { CardComponent, CardContentComponent } from '../../../../shared/components/card/card';
 import { Button } from '../../../../shared/components/button/button';
 import { LanguageService } from '../../../../core/services/lenguage.service';
@@ -8,8 +8,6 @@ import { LanguageService } from '../../../../core/services/lenguage.service';
   selector: 'app-news-section',
   standalone: true,
   imports: [
-    NgFor,
-    NgIf,
     NgClass,
     CardComponent,
     CardContentComponent,
@@ -61,7 +59,7 @@ export class NewsAgendaSectionComponent {
 
   content = {
     es: {
-      title: "Noticias y Agenda",
+      title: "Noticias",
       subtitle:
         "Mantente informado sobre los últimos descubrimientos...",
       news: "Noticias",
@@ -74,7 +72,7 @@ export class NewsAgendaSectionComponent {
         "Descubre cómo utilizamos tecnología de vanguardia...",
     },
     en: {
-      title: "News and Events",
+      title: "News",
       subtitle: "Stay informed about the latest discoveries...",
       news: "News",
       agenda: "Events",
