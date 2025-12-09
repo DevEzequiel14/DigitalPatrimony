@@ -79,26 +79,24 @@ export class CollectionHistorySectionComponent implements OnInit {
     () => this.historyItems[this.currentIndex()]
   );
 
-  ngOnInit() {
-    this.startAutoPlay();
-
-    // Reinicia autoplay cuando cambia index manualmente
+  constructor() {
     effect(() => {
       this.currentIndex();
       this.restartAutoPlay();
     });
   }
 
+  ngOnInit() {
+    this.startAutoPlay();
+  }
+
   ngOnDestroy() {
     this.clearAutoPlay();
   }
 
-  // autoplay cada 5s
   private startAutoPlay() {
     this.clearAutoPlay();
-
     if (!this.isAutoPlaying()) return;
-
     this.intervalId = setInterval(() => {
       this.nextSlide();
     }, 5000);
@@ -136,5 +134,4 @@ export class CollectionHistorySectionComponent implements OnInit {
   goToSlide(index: number) {
     this.currentIndex.set(index);
   }
-
 }
