@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../../../../core/services/lenguage.service';
 
 @Component({
@@ -41,7 +41,5 @@ export class FooterComponent {
     },
   };
 
-  // Computed para referenciar directamente el contenido del idioma
   currentContent = computed(() => this.content[this.language()]);
-
 }
