@@ -15,10 +15,7 @@ interface Collaborator {
   templateUrl: './collaborators-section.component.html',
   styleUrls: ['./collaborators-section.component.css'],
   imports: [
-    NgFor,
     NgClass,
-
-
   ]
 })
 export class CollaboratorsSectionComponent {
@@ -115,5 +112,4 @@ export class CollaboratorsSectionComponent {
         return 'Otro'
     }
   }
-
 }

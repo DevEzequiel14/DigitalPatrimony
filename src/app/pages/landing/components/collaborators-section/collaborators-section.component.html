@@ -1,7 +1,5 @@
 <section id="colaboradores" class="py-16 bg-secondary/30">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Header -->
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-foreground mb-4">Colaboradores</h2>
       <p class="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
@@ -9,64 +7,55 @@
         museos y centros de investigación comprometidos con la preservación del patrimonio cultural.
       </p>
     </div>
-
-    <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <ng-container *ngFor="let c of collaborators">
-
-        <div card class="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div cardContent class="p-6">
-
-            <div class="flex items-start justify-between mb-4">
-              <span class="inline-block px-2 py-1 rounded-full text-xs font-medium mb-2"
-                [ngClass]="getTypeColor(c.type)">
-                {{ getTypeName(c.type) }}
-              </span>
-
-              <!-- <lucide-external-link class="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors">
-              </lucide-external-link> -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+                gap-6">
+      @for (c of collaborators; track $index) {
+        <ng-container>
+          <div card class="group hover:shadow-lg transition-all duration-300
+                                 hover:-translate-y-1">
+            <div cardContent class="p-6">
+              <div class="flex items-start justify-between mb-4">
+                <span class="inline-block px-2 py-1 rounded-full text-xs
+                                   font-medium mb-2" [ngClass]="getTypeColor(c.type)">
+                  {{ getTypeName(c.type) }}
+                </span>
+              </div>
+              <h3 class="font-semibold text-foreground mb-3 text-balance
+                               group-hover:text-primary transition-colors">
+                {{ c.name }}
+              </h3>
+              <p class="text-sm text-muted-foreground mb-4 text-pretty">
+                {{ c.description }}
+              </p>
+              <a [href]="c.url" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2 text-sm text-primary
+                        hover:text-primary/80 transition-colors font-medium">
+                Visitar sitio web
+                <span class="material-symbols-outlined text-base!">
+                  open_in_new
+                </span>
+              </a>
             </div>
-
-            <h3 class="font-semibold text-foreground mb-3 text-balance group-hover:text-primary transition-colors">
-              {{ c.name }}
-            </h3>
-
-            <p class="text-sm text-muted-foreground mb-4 text-pretty">
-              {{ c.description }}
-            </p>
-
-            <a [href]="c.url" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium">
-
-              Visitar sitio web
-
-              <!-- <lucide-external-link class="h-3 w-3"></lucide-external-link> -->
-
-            </a>
           </div>
-        </div>
-
-      </ng-container>
+        </ng-container>
+      }
     </div>
-
-    <!-- Call to action -->
     <div class="mt-12 text-center">
       <div class="bg-background rounded-lg p-8 max-w-2xl mx-auto">
-
-        <h3 class="text-xl font-semibold text-foreground mb-4">¿Interesado en Colaborar?</h3>
-
+        <h3 class="text-xl font-semibold text-foreground mb-4">
+          ¿Interesado en Colaborar?
+        </h3>
         <p class="text-muted-foreground mb-6 text-pretty">
           Si representas una institución académica, museo o centro de investigación y estás
           interesado en formar parte de este proyecto, nos encantaría conocer tu propuesta.
         </p>
-
         <a href="mailto:colaboraciones@repositorio-patrimonial.org"
-          class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors font-medium">
+          class="inline-flex items-center gap-2 bg-primary
+                 text-primary-foreground px-6 py-3 rounded-lg
+                 hover:bg-primary/90 transition-colors font-medium">
           Contactar para Colaborar
         </a>
-
       </div>
     </div>
-
   </div>
 </section>
