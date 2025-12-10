@@ -1,57 +1,35 @@
 <section id="catalogo" class="py-16 bg-background">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-      <!-- Image Side -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div class="order-2 lg:order-1">
         <ui-card class="overflow-hidden">
           <div class="relative">
-            <img src="/ancient-digital-catalog-interface.jpg" alt="Catálogo Digital Patrimonial"
-              class="w-full h-96 object-cover" />
-
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-
-            <div class="absolute bottom-6 left-6 right-6">
-              <div class="flex items-center gap-3 text-white">
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                  <search class="h-5 w-5"></search>
-                </div>
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                  <!-- <filter class="h-5 w-5"></filter> -->
-                </div>
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                  <!-- <download class="h-5 w-5"></download> -->
-                </div>
-              </div>
-            </div>
+            <img src="/ancient-digital-catalog-interface.jpg"
+                 alt="Catálogo Digital Patrimonial"
+                 class="w-full h-96 object-cover"/>
+            <div class="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
           </div>
         </ui-card>
-
         <div class="mt-6 text-center">
           <app-button ui-button size="lg" class="bg-primary hover:bg-primary/90">
             {{ t().accessButton }}
           </app-button>
         </div>
       </div>
-
-      <!-- Content Side -->
       <div class="order-1 lg:order-2">
-
         <h2 class="text-3xl font-bold text-foreground mb-6">
           {{ t().title }}
         </h2>
-
         <div class="space-y-6">
-
           <p class="text-lg text-muted-foreground text-pretty">
             {{ t().description }}
           </p>
-
-          <!-- Feature 1 -->
           <div class="flex items-start gap-3">
-            <div class="bg-accent text-accent-foreground rounded-full p-2 mt-1">
-              <search class="h-4 w-4"></search>
+            <div class="bg-accent text-accent-foreground rounded-full p-2 mt-1
+                        w-10 h-10">
+              <span class="material-symbols-outlined">
+                search
+              </span>
             </div>
             <div>
               <h3 class="font-semibold text-foreground mb-1">
@@ -62,11 +40,12 @@
               </p>
             </div>
           </div>
-
-          <!-- Feature 2 -->
           <div class="flex items-start gap-3">
-            <div class="bg-accent text-accent-foreground rounded-full p-2 mt-1">
-              <!-- <filter class="h-4 w-4"></filter> -->
+            <div class="bg-accent text-accent-foreground rounded-full p-2 mt-1
+                        w-10 h-10">
+              <span class="material-symbols-outlined ">
+                filter_alt
+              </span>
             </div>
             <div>
               <h3 class="font-semibold text-foreground mb-1">
@@ -77,11 +56,12 @@
               </p>
             </div>
           </div>
-
-          <!-- Feature 3 -->
           <div class="flex items-start gap-3">
-            <div class="bg-accent text-accent-foreground rounded-full p-2 mt-1">
-              <!-- <download class="h-4 w-4"></download> -->
+            <div class="bg-accent text-accent-foreground rounded-full p-2 mt-1
+                        w-10 h-10">
+              <span class="material-symbols-outlined">
+                download
+              </span>
             </div>
             <div>
               <h3 class="font-semibold text-foreground mb-1">
@@ -92,52 +72,8 @@
               </p>
             </div>
           </div>
-
-
-          <!-- Stats -->
-          <div class="bg-secondary/50 rounded-lg p-6 mt-8">
-            <h4 class="font-semibold text-foreground mb-3">
-              {{ t().stats.title }}
-            </h4>
-
-            <div class="grid grid-cols-2 gap-4">
-
-              <div class="text-center">
-                <div class="text-2xl font-bold text-primary">5,247</div>
-                <div class="text-sm text-muted-foreground">
-                  {{ t().stats.artifacts }}
-                </div>
-              </div>
-
-              <div class="text-center">
-                <div class="text-2xl font-bold text-primary">127</div>
-                <div class="text-sm text-muted-foreground">
-                  {{ t().stats.sites }}
-                </div>
-              </div>
-
-              <div class="text-center">
-                <div class="text-2xl font-bold text-primary">23</div>
-                <div class="text-sm text-muted-foreground">
-                  {{ t().stats.cultures }}
-                </div>
-              </div>
-
-              <div class="text-center">
-                <div class="text-2xl font-bold text-primary">3,000</div>
-                <div class="text-sm text-muted-foreground">
-                  {{ t().stats.years }}
-                </div>
-              </div>
-
-            </div>
-          </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
 </section>

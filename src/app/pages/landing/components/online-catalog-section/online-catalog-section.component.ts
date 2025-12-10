@@ -75,6 +75,5 @@ export class OnlineCatalogSectionComponenet {
     },
   };
 
-  /** Traducción reactiva usando signals */
   t = computed(() => this.content[this.lang.language()]);
 }
