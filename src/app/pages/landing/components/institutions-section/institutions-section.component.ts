@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../../../core/services/lenguage.service';
 
@@ -10,7 +9,7 @@ import { LanguageService } from '../../../../core/services/lenguage.service';
 export class InstitutionsSectionComponent {
 
   private languageService = inject(LanguageService);
-  language = this.languageService.language(); // Signal: "es" | "en"
+  language = this.languageService.language();
 
   content = {
     es: {
