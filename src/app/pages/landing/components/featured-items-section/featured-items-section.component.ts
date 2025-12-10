@@ -19,7 +19,6 @@ interface FeaturedPiece {
     Button,
     CardComponent,
     CardContentComponent,
-    NgFor,
     NgClass],
 })
 export class FeaturedItemsSectionComponent implements OnDestroy {
@@ -35,7 +34,6 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
     { id: 8, title: 'Pectoral de Concha', image: '/ancient-shell-pectoral-ornament.jpg', period: '700-900 d.C.', category: 'Malacología' },
   ];
 
-  /* ------------------ LOGIC ------------------ */
   itemsPerSlide = 4;
   totalSlides = Math.ceil(this.featuredPieces.length / this.itemsPerSlide);
   totalSlidesArray = Array.from({ length: this.totalSlides });
@@ -59,8 +57,6 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
   ngOnDestroy() {
     clearInterval(this.intervalId);
   }
-
-  /* ------------------ METHODS ------------------ */
 
   goToSlide(index: number) {
     this.currentSlide.set(index);
@@ -90,5 +86,4 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
   progressBarWidth() {
     return `${((this.currentSlide() + 1) / this.totalSlides) * 100}%`;
   }
-
 }

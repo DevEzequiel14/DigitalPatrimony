@@ -22,7 +22,6 @@ interface HistoryItem {
     CardContentComponent,
     NgClass,
     NgStyle,
-    NgFor
   ],
 })
 export class CollectionHistorySectionComponent implements OnInit {
