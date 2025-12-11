@@ -1,8 +1,9 @@
-import { Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../../../../core/services/lenguage.service';
 
 @Component({
   selector: 'app-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })

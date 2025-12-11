@@ -1,5 +1,5 @@
 import { NgClass, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 interface Collaborator {
   id: number
@@ -12,6 +12,7 @@ interface Collaborator {
 
 @Component({
   selector: 'app-collaborators-section',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './collaborators-section.component.html',
   styleUrls: ['./collaborators-section.component.css'],
   imports: [

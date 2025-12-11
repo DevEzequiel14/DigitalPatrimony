@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'ui-card',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
   template: `
     <div
@@ -24,6 +25,7 @@ export class CardComponent {
 @Component({
   selector: 'ui-card-header',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
   template: `
     <div
@@ -44,6 +46,7 @@ export class CardHeaderComponent {
 @Component({
   selector: 'ui-card-title',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
   template: `
     <div
@@ -61,6 +64,7 @@ export class CardTitleComponent {
 @Component({
   selector: 'ui-card-description',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
   template: `
     <div
@@ -78,6 +82,7 @@ export class CardDescriptionComponent {
 @Component({
   selector: 'ui-card-action',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
   template: `
     <div
@@ -98,6 +103,7 @@ export class CardActionComponent {
 @Component({
   selector: 'ui-card-content',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
   template: `
     <div data-slot="card-content" [ngClass]="['px-6', class]">
@@ -112,6 +118,7 @@ export class CardContentComponent {
 @Component({
   selector: 'ui-card-footer',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
   template: `
     <div

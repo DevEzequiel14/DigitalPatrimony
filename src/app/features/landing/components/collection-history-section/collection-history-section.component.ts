@@ -1,5 +1,5 @@
 import { NgClass, NgStyle, NgFor } from '@angular/common';
-import { Component, computed, effect, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, OnInit, signal } from '@angular/core';
 import { CardComponent, CardContentComponent } from '../../../../shared/components/card/card';
 import { Button } from '../../../../shared/components/button/button';
 
@@ -14,6 +14,7 @@ interface HistoryItem {
 
 @Component({
   selector: 'app-collection-history-section',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './collection-history-section.component.html',
   styleUrls: ['./collection-history-section.component.css'],
   imports: [

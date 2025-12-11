@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LanguageService } from '../../../../core/services/lenguage.service';
 
 @Component({
   selector: 'app-institutions-section',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './institutions-section.component.html',
   styleUrls: ['./institutions-section.component.css'],
 })

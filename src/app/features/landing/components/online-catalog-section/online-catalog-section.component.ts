@@ -1,10 +1,11 @@
 import { LanguageService } from './../../../../core/services/lenguage.service';
-import { Component, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { CardComponent } from "../../../../shared/components/card/card";
 import { Button } from "../../../../shared/components/button/button";
 
 @Component({
   selector: 'app-online-catalog-section',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './online-catalog-section.component.html',
   styleUrls: ['./online-catalog-section.component.css'],
   imports: [CardComponent, Button]

@@ -52,7 +52,7 @@
         </app-button>
 
         <div class="flex space-x-2">
-          @for (item of historyItems; track $index; let i = $index) {
+          @for (item of historyItems; track item.id; let i = $index) {
             <button (click)="goToSlide(i)" [ngClass]="
                           i === currentIndex()
                             ? 'bg-primary scale-110'

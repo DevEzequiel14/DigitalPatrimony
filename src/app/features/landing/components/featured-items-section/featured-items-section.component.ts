@@ -1,5 +1,5 @@
 import { NgClass, NgFor } from '@angular/common';
-import { Component, effect, OnDestroy, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, OnDestroy, OnInit, signal } from '@angular/core';
 import { Button } from '../../../../shared/components/button/button';
 import { CardComponent, CardContentComponent } from '../../../../shared/components/card/card';
 
@@ -13,6 +13,7 @@ interface FeaturedPiece {
 
 @Component({
   selector: 'app-featured-items-section',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './featured-items-section.component.html',
   styleUrls: ['./featured-items-section.component.css'],
   imports: [

@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, computed } from '@angular/core';
 import { NgClass, NgFor, NgForOf } from '@angular/common';
 import { CardComponent, CardContentComponent } from '../../../../shared/components/card/card';
 import { Button } from '../../../../shared/components/button/button';
@@ -7,6 +7,7 @@ import { LanguageService } from '../../../../core/services/lenguage.service';
 @Component({
   selector: 'app-news-section',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NgClass,
     CardComponent,

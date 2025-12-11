@@ -1,13 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { inject } from '@angular/core';
 import { Button } from '../../../../shared/components/button/button';
 
 @Component({
   selector: 'app-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [Button],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class Header {
+  private viewportScroller = inject(ViewportScroller);
+
   isMenuOpen = signal(false);
   language = signal<'es' | 'en'>('es');
 
@@ -21,10 +26,7 @@ export class Header {
   ]);
 
   scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    this.viewportScroller.scrollToAnchor(sectionId);
     this.isMenuOpen.set(false);
   }
 
