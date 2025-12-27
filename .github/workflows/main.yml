@@ -35,11 +35,11 @@ jobs:
         run: npm run build
 
       - name: Rename index for routing
-        run: mv dist/digital-patrimony/browser/index.html dist/digital-patrimony/browser/404.html
+        run: mv dist/DigitalPatrimony/browser/index.html dist/DigitalPatrimony/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.2.0
         with:
-          build_dir: dist/digital-patrimony/browser
+          build_dir: dist/DigitalPatrimony/browser
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
