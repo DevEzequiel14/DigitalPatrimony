@@ -34,7 +34,7 @@ export class CollectionHistorySectionComponent implements OnInit {
       period: '3000 - 1000 a.C.',
       description:
         'La transición hacia la agricultura marcó un cambio fundamental...',
-      image: '/ancient-pottery-discovery-archaeological-site.jpg',
+      image: 'ancient-pottery-discovery-archaeological-site.jpg',
       details:
         'Este período neolítico se caracterizó por la aparición de asentamientos permanentes...',
     },
@@ -44,7 +44,7 @@ export class CollectionHistorySectionComponent implements OnInit {
       period: '1000 a.C. - 500 d.C.',
       description:
         'Surgimiento de complejas sociedades urbanas con sistemas de escritura...',
-      image: '/ancient-manuscripts-historical-documents-digitizat.jpg',
+      image: 'ancient-manuscripts-historical-documents-digitizat.jpg',
       details:
         'Las ciudades-estado desarrollaron sistemas políticos complejos...',
     },
@@ -54,7 +54,7 @@ export class CollectionHistorySectionComponent implements OnInit {
       period: '500 - 1000 d.C.',
       description:
         'Época de máximo esplendor cultural caracterizada por avances científicos...',
-      image: '/precolumbian-textiles-ancient-weaving-patterns.jpg',
+      image: 'precolumbian-textiles-ancient-weaving-patterns.jpg',
       details:
         'Durante este período florecieron las artes decorativas y la metalurgia...',
     },
@@ -64,7 +64,7 @@ export class CollectionHistorySectionComponent implements OnInit {
       period: '1500 - 1600 d.C.',
       description:
         'El encuentro entre dos mundos transformó radicalmente las sociedades indígenas...',
-      image: '/ancient-archaeological-artifacts-pottery-ceramics-.jpg',
+      image: 'ancient-archaeological-artifacts-pottery-ceramics-.jpg',
       details:
         'Este período de contacto cultural resultó en nuevas formas artísticas híbridas...',
     },

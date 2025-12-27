@@ -25,14 +25,14 @@ interface FeaturedPiece {
 export class FeaturedItemsSectionComponent implements OnDestroy {
 
   featuredPieces: FeaturedPiece[] = [
-    { id: 1, title: 'Vasija Ceremonial', image: '/ancient-ceremonial-pottery-vessel.jpg', period: '500-800 d.C.', category: 'Cerámica' },
-    { id: 2, title: 'Máscara Ritual', image: '/ancient-ritual-mask-jade-stone.jpg', period: '200-400 d.C.', category: 'Jade' },
-    { id: 3, title: 'Figurilla Antropomorfa', image: '/ancient-anthropomorphic-figurine-clay.jpg', period: '100-300 d.C.', category: 'Escultura' },
-    { id: 4, title: 'Collar de Oro', image: '/ancient-gold-necklace-pre-columbian.jpg', period: '800-1000 d.C.', category: 'Orfebrería' },
-    { id: 5, title: 'Hacha Ceremonial', image: '/ancient-ceremonial-axe-obsidian.jpg', period: '600-900 d.C.', category: 'Lítica' },
-    { id: 6, title: 'Textil Decorado', image: '/ancient-decorated-textile-weaving-patterns.jpg', period: '400-600 d.C.', category: 'Textil' },
-    { id: 7, title: 'Incensario', image: '/ancient-incense-burner-ceramic-ritual.jpg', period: '300-500 d.C.', category: 'Cerámica' },
-    { id: 8, title: 'Pectoral de Concha', image: '/ancient-shell-pectoral-ornament.jpg', period: '700-900 d.C.', category: 'Malacología' },
+    { id: 1, title: 'Vasija Ceremonial', image: 'ancient-ceremonial-pottery-vessel.jpg', period: '500-800 d.C.', category: 'Cerámica' },
+    { id: 2, title: 'Máscara Ritual', image: 'ancient-ritual-mask-jade-stone.jpg', period: '200-400 d.C.', category: 'Jade' },
+    { id: 3, title: 'Figurilla Antropomorfa', image: 'ancient-anthropomorphic-figurine-clay.jpg', period: '100-300 d.C.', category: 'Escultura' },
+    { id: 4, title: 'Collar de Oro', image: 'ancient-gold-necklace-pre-columbian.jpg', period: '800-1000 d.C.', category: 'Orfebrería' },
+    { id: 5, title: 'Hacha Ceremonial', image: 'ancient-ceremonial-axe-obsidian.jpg', period: '600-900 d.C.', category: 'Lítica' },
+    { id: 6, title: 'Textil Decorado', image: 'ancient-decorated-textile-weaving-patterns.jpg', period: '400-600 d.C.', category: 'Textil' },
+    { id: 7, title: 'Incensario', image: 'ancient-incense-burner-ceramic-ritual.jpg', period: '300-500 d.C.', category: 'Cerámica' },
+    { id: 8, title: 'Pectoral de Concha', image: 'ancient-shell-pectoral-ornament.jpg', period: '700-900 d.C.', category: 'Malacología' },
   ];
 
   itemsPerSlide = 4;
