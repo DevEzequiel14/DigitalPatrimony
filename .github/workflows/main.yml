@@ -32,10 +32,10 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base-href /DigitalPatrimony/
 
-      - name: Rename index for routing
-        run: mv dist/DigitalPatrimony/browser/index.html dist/DigitalPatrimony/browser/404.html
+      - name: Copy index to 404 for SPA routing
+        run: cp dist/DigitalPatrimony/browser/index.html dist/DigitalPatrimony/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.2.0
