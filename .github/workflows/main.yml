@@ -34,6 +34,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Rename index for routing
+        run: mv dist/DigitalPatrimony/index.html dist/DigitalPatrimony/404.html
+
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4.2.0
         with:
