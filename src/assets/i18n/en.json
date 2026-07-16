@@ -47,5 +47,17 @@
         "description": "Cántaro cerámico. Estos recipientes fueron elaborados por pueblos indígenas alfareros desde la época precolonial. No obstante, durante el siglo XX las comunidades locales continuaron produciéndolos, principalmente para la elaboración, transporte y almacenamiento de chicha. Este cántaro es un ejemplo de ello."
       }
     }
+  },
+  "catalog": {
+    "title": "Catálogo",
+    "imageAlt": "Catálogo Digital Patrimonial",
+    "accessButton": "Acceder al Catálogo Digital",
+    "paragraphs": {
+      "p1": "Patrimonio en Red surge del encuentro entre instituciones científicas, organismos de gestión patrimonial y comunidades locales comprometidas con la preservación, investigación y difusión del patrimonio cultural. Su propósito es generar un espacio digital abierto que contribuya a documentar, conservar y compartir conocimientos sobre el patrimonio desde una perspectiva participativa, fortaleciendo el diálogo entre saberes comunitarios e investigación científica.",
+      "p2": "Si bien este repositorio es el resultado de diversos procesos de trabajo, colaboración e intercambio desarrollados a lo largo de los años, un hito fundamental para su consolidación fue la adjudicación de un subsidio en la convocatoria Proyectos Federales de Innovación 2023 (PFI 2023). Esta línea de financiamiento, impulsada para promover la generación y transferencia de conocimientos científico-tecnológicos orientados a la resolución de problemáticas concretas de alcance local, provincial y regional, permitió impulsar herramientas innovadoras para la documentación, gestión y socialización del patrimonio arqueológico.",
+      "p3": "A partir de esta experiencia, se fortalecieron las capacidades institucionales y comunitarias necesarias para construir este repositorio digital, concebido como un espacio de acceso abierto donde convergen memoria, territorio, ciencia y comunidad.",
+      "p4": "El catálogo reúne registros digitales de bienes patrimoniales arqueológicos de los valles de la provincia de Jujuy. Incluye fotografías, modelos tridimensionales, audios y descripciones de base científica, organizados por regiones, materiales y contextos.",
+      "p5": "Vas a poder explorar distintas piezas, confeccionadas en distintos materiales, pertenecientes a distintas culturas y correspondientes a distintos momentos de nuestra historia. Cada una de ellas es una joya en sí misma, y te invitamos a explorar."
+    }
   }
 }
