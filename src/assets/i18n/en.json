@@ -1,0 +1,18 @@
+{
+  "header": {
+    "brand": "Patrimonio en Red",
+    "title": "Patrimonio en Red",
+    "subtitle": "Knowledge, management and communities in dialogue",
+    "description": "Discover heritage as a collective construction where memory, territory, science and community converge. This space brings together digital collections, 3D models, research and stories built through dialogue among local knowledge, public management and scientific research, promoting new ways of knowing, preserving and sharing.",
+    "ctaCatalog": "Explore Catalog",
+    "imageAlt": "Archaeological collection",
+    "nav": {
+      "news": "News",
+      "history": "History",
+      "featured": "Featured Pieces",
+      "catalog": "Catalog",
+      "collaborators": "Collaborators",
+      "institutions": "Institutions"
+    }
+  }
+}

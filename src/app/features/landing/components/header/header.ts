@@ -1,29 +1,33 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
-import { inject } from '@angular/core';
 import { Button } from '../../../../shared/components/button/button';
+import { LanguageService } from '../../../../core/services/lenguage.service';
+import { TranslationService } from '../../../../core/services/translation.service';
 
 @Component({
   selector: 'app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [Button],
   templateUrl: './header.html',
-  styleUrl: './header.css'
+  styleUrl: './header.css',
 })
 export class Header {
-  private viewportScroller = inject(ViewportScroller);
+  private readonly viewportScroller = inject(ViewportScroller);
+  private readonly languageService = inject(LanguageService);
+  private readonly translationService = inject(TranslationService);
 
-  isMenuOpen = signal(false);
-  language = signal<'es' | 'en'>('es');
+  readonly isMenuOpen = signal(false);
+  readonly language = this.languageService.language;
+  readonly t = this.translationService.t;
 
-  navItems = signal([
-    { id: 'noticias', labelEs: 'Noticias', labelEn: 'News' },
-    { id: 'historia', labelEs: 'Historia', labelEn: 'History' },
-    { id: 'piezas-destacadas', labelEs: 'Piezas Destacadas', labelEn: 'Featured Pieces' },
-    { id: 'catalogo', labelEs: 'Catálogo', labelEn: 'Catalog' },
-    { id: 'colaboradores', labelEs: 'Colaboradores', labelEn: 'Collaborators' },
-    { id: 'instituciones', labelEs: 'Instituciones', labelEn: 'Institutions' },
-  ]);
+  readonly navItems = [
+    { id: 'noticias', labelKey: 'header.nav.news' },
+    { id: 'historia', labelKey: 'header.nav.history' },
+    { id: 'piezas-destacadas', labelKey: 'header.nav.featured' },
+    { id: 'catalogo', labelKey: 'header.nav.catalog' },
+    { id: 'colaboradores', labelKey: 'header.nav.collaborators' },
+    { id: 'instituciones', labelKey: 'header.nav.institutions' },
+  ];
 
   scrollToSection(sectionId: string) {
     this.viewportScroller.scrollToAnchor(sectionId);
@@ -31,6 +35,6 @@ export class Header {
   }
 
   toggleLanguage() {
-    //this.language.set(this.language() === 'es' ? 'en' : 'es');
+    this.languageService.toggleLanguage();
   }
 }

@@ -5,16 +5,16 @@
       <div class="flex items-center justify-between h-16">
         <div class="shrink-0">
           <h1 class="text-xl font-bold text-primary">
-            Repositorio Digital Patrimonial
+            {{ t()('header.brand') }}
           </h1>
         </div>
         <div class="hidden lg:block">
           <div class="ml-10 flex items-baseline space-x-4">
-            @for (item of navItems(); track item.id) {
+            @for (item of navItems; track item.id) {
             <button (click)="scrollToSection(item.id)"
               class="text-foreground hover:text-primary px-3 py-2 rounded-md
                      text-sm font-medium transition-colors cursor-pointer">
-              {{ item.labelEs }}
+              {{ t()(item.labelKey) }}
             </button>
             }
           </div>
@@ -53,11 +53,11 @@
     <div class="lg:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t
                   border-border/20">
-        @for (item of navItems(); track item.id) {
+        @for (item of navItems; track item.id) {
         <button (click)="scrollToSection(item.id)"
           class="text-foreground hover:text-primary block px-3 py-2 rounded-md
                  text-base font-medium w-full text-left transition-colors">
-          {{ item.labelEs }}
+          {{ t()(item.labelKey) }}
         </button>
         }
       </div>
@@ -65,10 +65,10 @@
     }
   </nav>
 
-  <div class="relative h-96 lg:h-[500px] overflow-hidden">
+  <div class="relative min-h-96 lg:min-h-[560px] overflow-hidden py-12 lg:py-16">
     <div class="absolute inset-0">
       <img src="ancient-archaeological-artifacts-pottery-ceramics-.jpg"
-           alt="Colección arqueológica"
+           [alt]="t()('header.imageAlt')"
            class="w-full h-full object-cover"/>
       <div class="absolute inset-0 bg-linear-to-r from-black/60 via-black/40
                   to-transparent">
@@ -76,18 +76,20 @@
     </div>
     <div class="relative z-10 h-full flex items-center">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl">
-          <h2 class="text-4xl lg:text-6xl font-bold text-white mb-4">
-            Preservando Nuestro Patrimonio Cultural
+        <div class="max-w-3xl">
+          <h2 class="text-4xl lg:text-6xl font-bold text-white mb-3">
+            {{ t()('header.title') }}
           </h2>
-          <p class="text-lg lg:text-xl text-white/90 mb-8">
-            Explora una colección única de artefactos arqueológicos que
-            narran nuestra historia ancestral.
+          <p class="text-xl lg:text-2xl text-white/95 font-medium mb-4">
+            {{ t()('header.subtitle') }}
+          </p>
+          <p class="text-base lg:text-lg text-white/90 mb-8">
+            {{ t()('header.description') }}
           </p>
           <app-button size="lg" className="bg-primary hover:bg-primary/90
                                            text-primary-foreground cursor-pointer"
             (click)="scrollToSection('catalogo')">
-            Explorar Catálogo
+            {{ t()('header.ctaCatalog') }}
           </app-button>
         </div>
       </div>
