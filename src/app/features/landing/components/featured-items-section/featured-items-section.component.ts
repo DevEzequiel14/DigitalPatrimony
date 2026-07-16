@@ -1,14 +1,26 @@
-import { NgClass, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, OnDestroy, OnInit, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { Button } from '../../../../shared/components/button/button';
-import { CardComponent, CardContentComponent } from '../../../../shared/components/card/card';
+import {
+  CardComponent,
+  CardContentComponent,
+} from '../../../../shared/components/card/card';
+import { TranslationService } from '../../../../core/services/translation.service';
 
 interface FeaturedPiece {
   id: number;
-  title: string;
   image: string;
-  period: string;
-  category: string;
+  titleKey: string;
+  periodKey: string;
+  categoryKey: string;
+  descriptionKey: string;
 }
 
 @Component({
@@ -16,33 +28,56 @@ interface FeaturedPiece {
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './featured-items-section.component.html',
   styleUrls: ['./featured-items-section.component.css'],
-  imports: [
-    Button,
-    CardComponent,
-    CardContentComponent,
-    NgClass],
+  imports: [Button, CardComponent, CardContentComponent, NgClass],
 })
 export class FeaturedItemsSectionComponent implements OnDestroy {
+  private readonly translationService = inject(TranslationService);
 
-  featuredPieces: FeaturedPiece[] = [
-    { id: 1, title: 'Vasija Ceremonial', image: 'ancient-ceremonial-pottery-vessel.jpg', period: '500-800 d.C.', category: 'Cerámica' },
-    { id: 2, title: 'Máscara Ritual', image: 'ancient-ritual-mask-jade-stone.jpg', period: '200-400 d.C.', category: 'Jade' },
-    { id: 3, title: 'Figurilla Antropomorfa', image: 'ancient-anthropomorphic-figurine-clay.jpg', period: '100-300 d.C.', category: 'Escultura' },
-    { id: 4, title: 'Collar de Oro', image: 'ancient-gold-necklace-pre-columbian.jpg', period: '800-1000 d.C.', category: 'Orfebrería' },
-    { id: 5, title: 'Hacha Ceremonial', image: 'ancient-ceremonial-axe-obsidian.jpg', period: '600-900 d.C.', category: 'Lítica' },
-    { id: 6, title: 'Textil Decorado', image: 'ancient-decorated-textile-weaving-patterns.jpg', period: '400-600 d.C.', category: 'Textil' },
-    { id: 7, title: 'Incensario', image: 'ancient-incense-burner-ceramic-ritual.jpg', period: '300-500 d.C.', category: 'Cerámica' },
-    { id: 8, title: 'Pectoral de Concha', image: 'ancient-shell-pectoral-ornament.jpg', period: '700-900 d.C.', category: 'Malacología' },
+  readonly t = this.translationService.t;
+
+  readonly featuredPieces: FeaturedPiece[] = [
+    {
+      id: 1,
+      image: 'ancient-ceremonial-pottery-vessel.jpg',
+      titleKey: 'featured.pieces.p1.title',
+      periodKey: 'featured.pieces.p1.period',
+      categoryKey: 'featured.pieces.p1.category',
+      descriptionKey: 'featured.pieces.p1.description',
+    },
+    {
+      id: 2,
+      image: 'ancient-ritual-mask-jade-stone.jpg',
+      titleKey: 'featured.pieces.p2.title',
+      periodKey: 'featured.pieces.p2.period',
+      categoryKey: 'featured.pieces.p2.category',
+      descriptionKey: 'featured.pieces.p2.description',
+    },
+    {
+      id: 3,
+      image: 'ancient-anthropomorphic-figurine-clay.jpg',
+      titleKey: 'featured.pieces.p3.title',
+      periodKey: 'featured.pieces.p3.period',
+      categoryKey: 'featured.pieces.p3.category',
+      descriptionKey: 'featured.pieces.p3.description',
+    },
+    {
+      id: 4,
+      image: 'ancient-gold-necklace-pre-columbian.jpg',
+      titleKey: 'featured.pieces.p4.title',
+      periodKey: 'featured.pieces.p4.period',
+      categoryKey: 'featured.pieces.p4.category',
+      descriptionKey: 'featured.pieces.p4.description',
+    },
   ];
 
-  itemsPerSlide = 4;
-  totalSlides = Math.ceil(this.featuredPieces.length / this.itemsPerSlide);
-  totalSlidesArray = Array.from({ length: this.totalSlides });
+  readonly itemsPerSlide = 4;
+  readonly totalSlides = Math.ceil(this.featuredPieces.length / this.itemsPerSlide);
+  readonly totalSlidesArray = Array.from({ length: this.totalSlides });
 
-  currentSlide = signal(0);
-  isAutoPlaying = signal(true);
+  readonly currentSlide = signal(0);
+  readonly isAutoPlaying = signal(true);
 
-  intervalId: any;
+  private intervalId: ReturnType<typeof setInterval> | undefined;
 
   constructor() {
     effect(() => {
@@ -65,12 +100,12 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
   }
 
   nextSlide(fromInterval = false) {
-    this.currentSlide.update(i => (i + 1) % this.totalSlides);
+    this.currentSlide.update((i) => (i + 1) % this.totalSlides);
     if (!fromInterval) this.pauseAutoPlay();
   }
 
   prevSlide() {
-    this.currentSlide.update(i => (i - 1 + this.totalSlides) % this.totalSlides);
+    this.currentSlide.update((i) => (i - 1 + this.totalSlides) % this.totalSlides);
     this.pauseAutoPlay();
   }
 

@@ -14,5 +14,38 @@
       "collaborators": "Collaborators",
       "institutions": "Institutions"
     }
+  },
+  "featured": {
+    "title": "Piezas Destacadas",
+    "subtitle": "Descubre los artefactos más significativos de nuestra colección, cada uno con una historia única que nos conecta con las civilizaciones del pasado.",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "viewCollection": "Ver Toda la Colección",
+    "pieces": {
+      "p1": {
+        "title": "Pieza cerámica",
+        "period": "Formativo, Fase La Viña (ca. 460–730 d.C.)",
+        "category": "Cerámica",
+        "description": "Pieza cerámica correspondiente al período Formativo, Fase La Viña (ca. 460–730 d.C.). Esta etapa se caracteriza por la producción de cerámica en tonos grises, rojos y negros, decorada mediante incisiones con motivos geométricos. Algunos ejemplares presentan pintura aplicada en modalidad bicolor o tricolor. También hay recipientes que exhiben superficies cuidadosamente pulidas. Procedencia: Aguas Calientes (Dpto. El Carmen)."
+      },
+      "p2": {
+        "title": "Hacha metálica de estilo incaico",
+        "period": "Época incaica",
+        "category": "Metal",
+        "description": "Hacha metálica de estilo incaico en forma de T. La presencia de un filo permite su valoración como instrumento de corte, haya sido este simbólico o utilitario. Las hachas con y sin gancho en la hoja son representativas de la época incaica. Procedencia: San Antonio."
+      },
+      "p3": {
+        "title": "Estribo de madera",
+        "period": "Período colonial",
+        "category": "Madera",
+        "description": "Estribo de madera. Se introdujeron con la colonización española. Inicialmente eran de hierro o plata. Con el paso del tiempo se comenzaron a manufacturar en madera. La gran variedad de formas dio origen a distintas denominaciones regionales. La decoración con motivos vegetales, rosetones, volutas, líneas y entretejidos se asocia al desarrollo de las tradiciones artesanales impulsadas por jesuitas. Procedencia: San Antonio."
+      },
+      "p4": {
+        "title": "Cántaro cerámico",
+        "period": "Tradición alfarera local",
+        "category": "Cerámica",
+        "description": "Cántaro cerámico. Estos recipientes fueron elaborados por pueblos indígenas alfareros desde la época precolonial. No obstante, durante el siglo XX las comunidades locales continuaron produciéndolos, principalmente para la elaboración, transporte y almacenamiento de chicha. Este cántaro es un ejemplo de ello."
+      }
+    }
   }
 }
