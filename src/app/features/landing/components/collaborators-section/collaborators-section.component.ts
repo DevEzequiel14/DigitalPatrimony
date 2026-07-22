@@ -1,13 +1,14 @@
-import { NgClass, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { TranslationService } from '../../../../core/services/translation.service';
 
 interface Collaborator {
-  id: number
-  name: string
-  description: string
-  url: string
-  logo?: string
-  type: 'university' | 'museum' | 'research' | 'government' | 'international'
+  id: number;
+  name: string;
+  description: string;
+  url: string;
+  logo?: string;
+  type: 'university' | 'museum' | 'research' | 'government' | 'international';
 }
 
 @Component({
@@ -15,11 +16,12 @@ interface Collaborator {
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './collaborators-section.component.html',
   styleUrls: ['./collaborators-section.component.css'],
-  imports: [
-    NgClass,
-  ]
+  imports: [NgClass],
 })
 export class CollaboratorsSectionComponent {
+  private readonly translationService = inject(TranslationService);
+
+  readonly t = this.translationService.t;
 
   collaborators: Collaborator[] = [
     {

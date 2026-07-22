@@ -111,5 +111,9 @@
         "description": "Integrantes del proyecto “El Patrimonio en Red” participaron de la I Jornada de Ciencia y Tecnología que surge como iniciativa de la SeCTER de la UNJu para socializar y promover las actividades científico-técnicas entre la comunidad y los investigadores que las gestionan y ejecutan. Se trató de un espacio para dar a conocer las líneas de investigación, proyectos y servicios dentro y fuera de la comunidad universitaria. En esta línea el proyecto compartió los diferentes alcances que tendrá al inicio de su ejecución y las amplias posibilidades de vinculación académica y extra-académica. En el transcurso de la Jornada se desarrollaron actividades relacionadas con: la promoción e incremento del trabajo inter, multi y trans-disciplinario en la comunidad científica y técnica de la UNJu; compartir con toda la comunidad de la región las actividades que se desarrollan en distintos campos, disciplinas y áreas de investigación; potenciar la articulación de estructuras de investigación que provean estrategias de desarrollo para la región; y la generación de información de base para implementar y fortalecer el trabajo multidisciplinario."
       }
     }
+  },
+  "collaborators": {
+    "title": "Colaboradores",
+    "subtitle": "El repositorio se construye de manera colaborativa, articulando instituciones científicas, organismos de gestión patrimonial, espacios educativos y comunidades locales."
   }
 }
