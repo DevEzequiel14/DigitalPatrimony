@@ -37,4 +37,6 @@ export class Header {
   toggleLanguage() {
     this.languageService.toggleLanguage();
   }
+
+  onButtonKeydown(_event: KeyboardEvent): void {}
 }
