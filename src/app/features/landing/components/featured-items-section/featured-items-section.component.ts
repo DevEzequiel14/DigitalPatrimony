@@ -38,7 +38,7 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
   readonly featuredPieces: FeaturedPiece[] = [
     {
       id: 1,
-      image: 'ancient-ceremonial-pottery-vessel.jpg',
+      image: 'pieceOne.webp',
       titleKey: 'featured.pieces.p1.title',
       periodKey: 'featured.pieces.p1.period',
       categoryKey: 'featured.pieces.p1.category',
@@ -46,7 +46,7 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
     },
     {
       id: 2,
-      image: 'ancient-ritual-mask-jade-stone.jpg',
+      image: 'pieceTwo.webp',
       titleKey: 'featured.pieces.p2.title',
       periodKey: 'featured.pieces.p2.period',
       categoryKey: 'featured.pieces.p2.category',
@@ -54,7 +54,7 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
     },
     {
       id: 3,
-      image: 'ancient-anthropomorphic-figurine-clay.jpg',
+      image: 'pieceThree.webp',
       titleKey: 'featured.pieces.p3.title',
       periodKey: 'featured.pieces.p3.period',
       categoryKey: 'featured.pieces.p3.category',
@@ -62,7 +62,7 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
     },
     {
       id: 4,
-      image: 'ancient-gold-necklace-pre-columbian.jpg',
+      image: 'pieceFour.webp',
       titleKey: 'featured.pieces.p4.title',
       periodKey: 'featured.pieces.p4.period',
       categoryKey: 'featured.pieces.p4.category',
@@ -122,4 +122,6 @@ export class FeaturedItemsSectionComponent implements OnDestroy {
   progressBarWidth() {
     return `${((this.currentSlide() + 1) / this.totalSlides) * 100}%`;
   }
+
+  onButtonKeydown(_event: KeyboardEvent): void {}
 }

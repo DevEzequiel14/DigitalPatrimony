@@ -22,7 +22,9 @@
                       <div class="relative overflow-hidden rounded-t-lg">
                         <img [src]="piece.image || '/placeholder.svg'"
                              [alt]="t()(piece.titleKey)"
-                             class="w-full h-64 object-cover
+                             loading="lazy"
+                             decoding="async"
+                             class="w-full h-64 object-cover object-center
                                     group-hover:scale-105 transition-transform
                                     duration-300" />
                         <div class="absolute inset-0 bg-linear-to-t from-black/60
@@ -64,7 +66,9 @@
       <div class="flex items-center justify-between mt-8">
         <app-button ui-button variant="outline" size="sm"
                     class="flex items-center gap-2 bg-transparent"
-                    (click)="prevSlide()" [disabled]="totalSlides <= 1">
+                    (click)="prevSlide()"
+                    (keydown)="onButtonKeydown($event)"
+                    [disabled]="totalSlides <= 1">
           <span class="material-symbols-outlined text-base!">
             arrow_back
           </span>
@@ -82,7 +86,9 @@
         </div>
         <app-button ui-button variant="outline" size="sm"
                     class="flex items-center gap-2 bg-transparent"
-                    (click)="nextSlide()" [disabled]="totalSlides <= 1">
+                    (click)="nextSlide()"
+                    (keydown)="onButtonKeydown($event)"
+                    [disabled]="totalSlides <= 1">
           {{ t()('featured.next') }}
           <span class="material-symbols-outlined text-base!">
             arrow_forward
